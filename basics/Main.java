@@ -56,7 +56,7 @@ public class App {
             return formatDateTime;
         }
 
-// pluralize method
+// main method
 
     public static void main(String[] args) {
         //   pluralize invocation
