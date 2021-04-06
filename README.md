@@ -34,4 +34,5 @@
 1. `javascriptLinter(<String File Pathe>)`: takes an js file checks for semicolons at the end return nothing if each sentence has its semicolon written at the end, otherwise it return the line number with missing semicolon statment 
 
 2. `analyzingWeatherData (<int[][]>) ` takes a 2 dimentional array search for the heighest and the lowest tempertures then checks for the tempertures that didn't show up and return  them  as string 
-3.` tally (<List<String>>)`: takes a list of votes and returns the highest votes 
+
+3. `tally (<List<String>>)`: takes a list of votes and returns the highest votes 
