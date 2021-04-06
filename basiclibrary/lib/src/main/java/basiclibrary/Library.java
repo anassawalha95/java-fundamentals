@@ -4,9 +4,7 @@
 package basiclibrary;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 
 public class Library {
 
@@ -97,6 +95,74 @@ public class Library {
 
     }
 
+    public static String analyzingWeatherData (int[][] temperature) {
+
+        Set<Integer> TempSet = new HashSet<Integer>();
+
+        int highestTemp=0;
+        int lowestTemp=10000;
+        int notShownTemp=0;
+
+        String Temps=new String();
+
+        // setting the values in Hashset  and remove the duplicates
+        for(int i=0;i<temperature.length;i++){
+            for(int j=0;j < temperature[i].length;j++){
+                TempSet.add(temperature[i][j]);
+            }
+        }
+
+        //filtering the values highest,and lowest
+        for(Integer item1: TempSet){
+              if(highestTemp<item1){
+                  highestTemp=item1;
+              }
+
+              if(lowestTemp>item1){
+                  lowestTemp=item1;
+              }
+        }
+
+        Temps+= "High: "+highestTemp+"\n";
+        Temps+= "Low: "+lowestTemp+"\n";
+
+        //filtering the  never seen temps
+        for(int i = lowestTemp;i<highestTemp;++i){
+            if (!TempSet.contains(i)) {
+                Temps+="Never saw temperature: "+ i+"\n";
+            }
+        }
+
+       // System.out.println(Temps);
+        return Temps;
+    }
+
+    public static String tally(List<String> votes){
+
+        HashMap<String ,Integer> votesList = new HashMap<>();
+
+        for(String item: votes){
+            if(votesList.containsKey(item))
+                 votesList.put(item.toString(), votesList.get(item).intValue() +1);
+            else{
+                votesList.put(item.toString(), 1);
+            }
+        }
+
+        String maxVotes="Unknown";
+
+        int value = 0;
+
+        for(Map.Entry item : votesList.entrySet()) {
+            if (((Integer) item.getValue()) > value) {
+                value = ((Integer) item.getValue());
+                maxVotes = ((String) item.getKey());
+            }
+        }
+
+        //System.out.println(maxVotes);
+        return maxVotes;
+    }
 
 
 }
