@@ -36,3 +36,19 @@
 2. `analyzingWeatherData (<int[][]>) ` takes a 2 dimentional array search for the heighest and the lowest tempertures then checks for the tempertures that didn't show up and return  them  as string 
 
 3. `tally (<List<String>>)`: takes a list of votes and returns the highest votes 
+
+
+###  inheritance Lab 6 
+
+**This Project Is built for Resturent Reviews where the users can rate any resturent the like**
+
+- The library has two classes (Resturant, Review) and one interface ResturantInterface
+
+**Methods**
+
+1. Resturant `addReview(<String name, String body, String Author, double starRating>)`
+
+2. Gitters And Setters for Resturant
+
+3. Gitters And Setters for Review
+ 
