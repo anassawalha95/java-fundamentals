@@ -15,7 +15,7 @@ public class App {
 
     public static String javaScriptLinter(String filePath) {
         System.out.println(filePath);
-        Path path = Paths.get(filePath); // getting the file path
+        Path path = Paths.get(App.class.getResource("/"+filePath).toURI()); // getting the file path
         BufferedReader reader  = null; //define the reader
         String missingSemicolon="";
         int currentLine = 1;
