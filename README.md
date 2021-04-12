@@ -40,15 +40,72 @@
 
 ###  inheritance Lab 6 
 
-**This Project Is built for Resturent Reviews where the users can rate any resturent the like**
+**This Project Is built for Resturent Reviews, shop review, and theater review where the users can rate any resturent,shop, and theater the like**
 
-- The library has two classes (Resturant, Review) and one interface ResturantInterface
+- The library has four classes (Resturant, Review , Shop, and Theater) and one interface ResturantInterface
 
 **Methods**
 
-1. Resturant `addReview(<String name, String body, String Author, double starRating>)`
+1. Resturant Class:
+    1. `getName()`
 
-2. Gitters And Setters for Resturant
+    2. ` setName(String name)`
 
-3. Gitters And Setters for Review
- 
+    3. `getStarsRating() `
+
+    4. `setStarsRating(double starsRating)`
+
+    5. `addReview (Review review)`
+
+    6. `toString()`
+
+2. Shop Class:
+   
+    1. `getName()`
+
+    2. `setName(String name)`
+
+    3. `getDescription()`
+
+    4. `setDescription(String description)`
+
+    5. `getNumOfDollerSign()`
+
+    6. `addReview (Review review)`
+
+    7. `toString()` 
+
+    
+3.  Theater Class:
+
+    1. `getName()`
+
+    2. `setName(String name)`
+
+    3. `getMovies()`
+
+    4. `setMovie(String movie) `
+
+    5. `addReview (Review review)`
+
+    6. `toString()`
+
+4. Review Class:
+
+    1. `getName()`
+
+    2. `setName(String name)`
+
+    3. `getBody()`
+
+    4. `setBody(String body)`
+
+    5. `getAuthor() `
+
+    6. `setAuthor(String author)`
+
+    7. `getStarsRating() `
+
+    8. `setStarsRating(double starsRating)`
+
+    9. `toString()`
