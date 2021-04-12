@@ -2,18 +2,18 @@ package inheritance;
 
 import java.util.LinkedList;
 
-public class Restaurant  implements RestaurantInterface {
+public class Restaurant implements ReviewInterface {
     // Instance Variables
     private String name;
     private double starsRating;
-
-    private LinkedList<Double> allReviews = new LinkedList<>();;
+    private double totalRating=0;
+    private double avgRating=0;
+    private LinkedList<Review> allReviews = new LinkedList<>();
 
 
     // Constructor
     public Restaurant (String name, double starRating) {
         setName(name);
-
         setStarsRating(starRating);
 
     }
@@ -37,17 +37,12 @@ public class Restaurant  implements RestaurantInterface {
         this.starsRating = starsRating;
     }
 
+    @Override
     public void addReview (Review review){
-        double totalRating=0;
-        double avgRating=0;
-        this.allReviews.add(review.getStarsRating());
-
-        for(double value: allReviews)
-        {
-            totalRating+=value;
-        }
-        avgRating=totalRating/ this.allReviews.size();
-
+        review.setName(this.getName());
+        this.allReviews.add(review);
+        this.totalRating+=review.getStarsRating();
+        this.avgRating=totalRating/allReviews.size();
         setStarsRating(avgRating);
     }
 

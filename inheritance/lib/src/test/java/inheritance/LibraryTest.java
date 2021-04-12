@@ -7,21 +7,45 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class LibraryTest {
-    @Test public void testSomeLibraryMethod() {
-       Restaurant restaurant =new Restaurant("crab", 5.0);
-       Review review1=new Review( "crab","wonerful place", "ace", 4.0);
-       Review review2=new Review("crab","wonerful place", "ace", 3.0);
-       Review review3=new Review("crab","wonerful place", "ace", 55);
-       Review review4=new Review("crab","wonerful place", "ace", 1.0);
+    @Test public void ResturantTest() {
+     Restaurant restaurant =new Restaurant("crab", 5.0);
+    Review review1=new Review( "its good","ace",  4.0);
+    Review review2=new Review("fine","ace",  3.0);
+    Review review3=new Review("great","ace",  5);
+    Review review4=new Review("crab","ace", 1.0);
         restaurant.addReview(review1);
         restaurant.addReview(review2);
         restaurant.addReview(review3);
         restaurant.addReview(review4);
-        System.out.println( restaurant.toString());
-        System.out.println( review4.toString());
 
-        assertEquals("Author ace has reviewed crab with 1.0 stars and said: wonerful place", review4.toString());
-        assertEquals("The restaurant crab has an average rate of  2.5 stars", restaurant.toString());
+    assertEquals("Author ace has reviewed crab with 1.0 stars and said: crab", review4.toString());
+    assertEquals("The restaurant crab has an average rate of  3.25 stars", restaurant.toString());
+
+    }
+
+    @Test public void ShopTest() {
+        Shop shop1 =new Shop("mc", "burger shop", 6);
+        Review reviewShop1=new Review("wonderful","malik",4.5);
+        shop1.addReview(reviewShop1);
+
+        assertEquals("The shop mc is burger shop with a price scale of 6.", shop1.toString());
+        assertEquals("Author malik has reviewed mc with 4.5 stars and said: wonderful", reviewShop1.toString());
+
+        System.out.println( shop1.toString());
+        System.out.println( reviewShop1.toString());
+    }
+
+    @Test public void TheaterTest() {
+
+
+
+        Theater Theater1 =new Theater("The picture");
+        Theater1.setMovie("The wolf");
+        Review Theater1review1=new Review("Great place","yahya", 4.6);
+        Theater1.addReview(Theater1review1);
+        Theater1.removeMovie("The wolf");
+        assertEquals(false, Theater1.removeMovie("The wolf"));
+        assertEquals("Author yahya has reviewed The picture with 4.6 stars and said: Great place", Theater1review1.toString());
 
     }
 }

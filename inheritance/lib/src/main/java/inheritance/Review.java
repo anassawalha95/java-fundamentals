@@ -1,6 +1,6 @@
 package inheritance;
 
-public class Review implements RestaurantInterface{
+public class Review {
 
     // Instance Variables
     private String body;
@@ -46,8 +46,8 @@ public class Review implements RestaurantInterface{
 
 
     // Constructor
-    public Review (String name, String body, String Author, double starRating) {
-        setName(name);
+    public Review (String body, String Author, double starRating) {
+
         setAuthor(Author);
         setBody(body);
         setStarsRating(starRating);
