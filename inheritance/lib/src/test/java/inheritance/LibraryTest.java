@@ -37,12 +37,14 @@ public class LibraryTest {
 
     @Test public void TheaterTest() {
 
-
-
         Theater Theater1 =new Theater("The picture");
-        Theater1.setMovie("The wolf");
+        Theater1.addMovie("The wolf");
         Review Theater1review1=new Review("Great place","yahya", 4.6);
+        Review movie1review1=new Review("Great place","yahya", 4.6);
         Theater1.addReview(Theater1review1);
+        Theater1.addReview(movie1review1,"The wolf");
+        System.out.println(Theater1.toString());
+        Theater1.addReview(movie1review1,"The asdas");
         Theater1.removeMovie("The wolf");
         assertEquals(false, Theater1.removeMovie("The wolf"));
         assertEquals("Author yahya has reviewed The picture with 4.6 stars and said: Great place", Theater1review1.toString());
